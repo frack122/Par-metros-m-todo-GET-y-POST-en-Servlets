@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Parámetros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function showMessageAndSubmit(form){
+            alert("Su Datos fueron enviados correctamente");
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>Enviar Parámetros</h1>
+    <form action="ServletParametros" method="post" onsubmit="showMessageAndSubmit(this); return false;">
+        <label for="Nombre">Nombre:</label>
+        <input type="text" id="Nombre" name="Nombre" required><br>
+        <label for="Apellido">Apellido:</label>
+        <input type="text" id="Apellido" name="Apellido" required><br>
+        <label for="Edad">Edad:</label>
+        <input type="number" id="Edad" name="Edad" required><br>
+        <hr class="my-4">
+         <h5>Selecione Su Genero</h5>
+        <input type="radio" id="Masculino" name="Genero" value="Masculino"required>
+        <label for="M">Masculino</label><br>
+        <input type="radio" id="Femenino" name="Genero" value="Femenino"required>
+        <label for="css">Femenino</label><br>
+        <hr class="my-4">
+        <div class="col-md-5">
+            <label for="programacion" class="form-label">Elija en que lenguaje programa</label>
+            <select class="form-select" id="pro" required name="pro">
+                <option value="">Elija...</option>
+                <option>Java</option>
+                <option>C++</option>
+                <option>JavaWeb</option>
+            </select>
+        </div>
+        <hr class="my-4">
+            <p><label for="w3review">Descripción de nosotros:</label></p>
+            <textarea id="Descripcion" name="Descripcion" rows="4" cols="50"></textarea>
+            <br>
+            <hr class="my-4">
+            <input type="reset" value="Reset">
+            <hr class="my-4">
+            <input href="ServletParametros"type="submit" value="Enviar">
+    </form>
+</div>
+</body>
+</html>
